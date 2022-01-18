@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .flex {
+            display: flex;
+        }
+        
+        .column {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .row {
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            width: 100%;
+            align-items: center;
+        }
+        
+        .pic-con {
+            width: 220px;
+            height: 220px;
+            border-radius: 20000px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container column">
+        <div class="pic-con center" onclick="profile()">
+            <img src="./profile.png" id="image" alt="">
+        </div>
+        <input type="file" name="" id="hidden-file" hidden>
+        <p class="name"></p>
+        <input type="text" name="" id="inp">
+        <button onclick="save()">save</button>
+        <button onclick="gotogame()">go to game</button>
+    </div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyBNUxIz17vobrvs4KI-GeRul_zL_5fCay4",
+            authDomain: "chuluu-chat.firebaseapp.com",
+            projectId: "chuluu-chat",
+            storageBucket: "chuluu-chat.appspot.com",
+            messagingSenderId: "872184827877",
+            appId: "1:872184827877:web:7077143b748b778542290c"
+        };
+        firebase.initializeApp(firebaseConfig);
+        firebase.auth().languageCode = 'mn'
+        const db = firebase.firestore();
+    </script>
+    <script src="./profile.js"></script>
+</body>
+
+</html>

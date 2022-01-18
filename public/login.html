@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .column {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .row {
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            width: 100%;
+            height: 100vh;
+        }
+        
+        .input {
+            width: 200px;
+            height: 30px;
+            margin-bottom: 20px;
+            padding: 0 10px;
+            outline: none;
+            border-radius: 10px;
+            border: 1px solid black;
+        }
+        
+        .btn {
+            width: 80px;
+            height: 30px;
+        }
+        
+        .c2 {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container center column">
+        <div class="column c1">
+            <div class="column">
+                <p>Утасны дугаар</p>
+                <input type="number" class="input" id="login" placeholder="Утасны дугаар">
+                <button class="btn" id="login-btn">Send</button>
+            </div>
+        </div>
+
+        <div class="column c2">
+            <div class="column">
+                <p>Verify</p>
+                <input type="number" class="input" id="verify-code" placeholder="Verify">
+                <button class="btn" id="verify-btn">Submit</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyBNUxIz17vobrvs4KI-GeRul_zL_5fCay4",
+            authDomain: "chuluu-chat.firebaseapp.com",
+            projectId: "chuluu-chat",
+            storageBucket: "chuluu-chat.appspot.com",
+            messagingSenderId: "872184827877",
+            appId: "1:872184827877:web:7077143b748b778542290c"
+        };
+        firebase.initializeApp(firebaseConfig);
+        firebase.auth().languageCode = 'mn'
+        const db = firebase.firestore();
+    </script>
+    <script src="./login.js"></script>
+</body>
+
+</html>

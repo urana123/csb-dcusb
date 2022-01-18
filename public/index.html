@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <div class="invite flex center" onclick="done()">
+        <div class="invite-div column" onclick="event.stopPropagation()">
+
+            <div class="flex center" style="font-weight: bold; font-size: 30px;">
+                Invite Your Friend
+            </div>
+            <div class="flex center">
+                <div class="href">
+                    <div id="invitation" class="center flex"></div>
+                    <i class="fa fa-copy btnCopy" id="copyIcon" onclick="copyFunction()" style="font-size:26px;"></i>
+                    <i class="fa fa-check btnCopy" id="checkIcon" style="font-size:26px; display: none;"></i>
+                </div>
+            </div>
+            <div class="flex j-end">
+                <div class="done" onclick="done()">
+                    done
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="container column" style="z-index: 0;">
+        <div class="flex between a-center" style="height: 50px;">
+            <div class="row a-center" style="font-size: 28px;">
+                <img width="50px" style="margin-right: 5px;" height="50px" src="./mori.png" alt=""> Цагаан Сар
+            </div>
+            Back
+        </div>
+        <div class="column centeral">
+            <div class="flex j-end" style="padding: 5px 0px; width: 100%;">
+                <div style="padding: 10px 25px; background-color: white; border-radius: 16px;">Тайлбар</div>
+            </div>
+            <div class="main-body flex1 flex">
+
+
+                <!-- 
+                <div class="choose-number column" style="padding: 0 30px;">
+                    <div class="flex j-start">
+                        <div class="loader-border">
+                            <div class="loader"></div>
+                            <div class="check flex center check-not">
+                                <i class="fa fa-check" style="font-size:13px;"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex j-end">
+                        <div class="choose-shagai row">
+                            <img width="40px" id="mori" style="opacity: 0.4;" src="./mori.png" alt="">
+                            <img width="40px" id="temee" style="opacity: 0.4;" src="./temee.png" onclick="chooseNumber(2)" alt="">
+                            <img width="40px" id="ymaa" style="opacity: 0.4;" src="./ymaa.png" alt="">
+                            <img width="40px" id="honi" style="opacity: 0.4;" src="./honi.png" onclick="chooseNumber(4)" alt="">
+                            <img width="40px" id="mori1" style="opacity: 0.4;" src="./mori.png" onclick="chooseNumber(5)" alt="">
+                            <div class="check flex center check-done">
+                                <i class="fa fa-check" style="font-size:13px;"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+
+                <!-- <div class="guess number column">
+                    <div class="flex j-start">
+                        <img src="./leftHand.png" alt="">
+                    </div>
+                    <div class="flex between" style="padding-left: 30px;">
+                        <div class="choose-shagai row">
+                            <img width="40px" id="mori" style="opacity: 0.4;" src="./mori.png" alt="">
+                            <img width="40px" id="temee" style="opacity: 0.4;" src="./temee.png" onclick="chooseNumber(2)" alt="">
+                            <img width="40px" id="ymaa" style="opacity: 0.4;" src="./ymaa.png" alt="">
+                            <img width="40px" id="honi" style="opacity: 0.4;" src="./honi.png" onclick="chooseNumber(4)" alt="">
+                            <img width="40px" id="mori1" style="opacity: 0.4;" src="./mori.png" onclick="chooseNumber(5)" alt="">
+                            <div class="check flex center check-done">
+                                <i class="fa fa-check" style="font-size:13px;"></i>
+                            </div>
+                        </div>
+                        <img src="./rightHand.png" alt="">
+                    </div>
+                    <div class="flex j-end" style="padding: 0 30px;">
+                        <div class="loader-border">
+                            <div class="loader"></div>
+                            <div class="check flex center check-not">
+                                <i class="fa fa-check" style="font-size:13px;"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+
+                <!-- <div class="open-hand column">
+                    <div class="flex j-start" style="height: 162px; position: relative;">
+                        <img height="100%" src="./leftOpen.png" alt="">
+                        <div class="number-of-shagai-left flex center" style="width: 8%; height: 50%;">
+                            <img width="45%" src="./mori.png" alt="">
+                            <img width="45%" src="./mori.png" alt="">
+                            <img width="45%" src="./mori.png" alt="">
+                            <img width="45%" src="./mori.png" alt="">
+                            <img width="45%" src="./mori.png" alt="">
+                        </div>
+                    </div>
+                    <div class="flex j-end" style="height: 162px; position: relative;">
+                        <img height="100%" src="./rightOpen.png" alt="">
+                        <div class="number-of-shagai-right flex center" style="width: 8%; height: 50%;">
+                            <img width="45%" src="./mori.png" alt="">
+                            <img width="45%" src="./mori.png" alt="">
+                            <img width="45%" src="./mori.png" alt="">
+                            <img width="45%" src="./mori.png" alt="">
+                            <img width="45%" src="./mori.png" alt="">
+                        </div>
+                    </div>
+                </div> -->
+
+
+                <!-- <div class="winning row between" style="padding: 0px 30px;">
+                    <p>Uranchimeg Win Yeyy &#127881;</p>
+                    <p>You Loose </p>
+                </div> -->
+
+
+            </div>
+            <div class="between flex" style="padding: 5px 0px; width: 100%;">
+                <div class="row">
+                    <p>Нийт шагай:&nbsp;</p>
+                    <p>5</p>
+                </div>
+                <div class="row">
+                    <p>Нийт шагай:&nbsp;</p>
+                    <p>5</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyBNUxIz17vobrvs4KI-GeRul_zL_5fCay4",
+            authDomain: "chuluu-chat.firebaseapp.com",
+            projectId: "chuluu-chat",
+            storageBucket: "chuluu-chat.appspot.com",
+            messagingSenderId: "872184827877",
+            appId: "1:872184827877:web:7077143b748b778542290c"
+        };
+        firebase.initializeApp(firebaseConfig);
+        firebase.auth().languageCode = 'mn'
+        const db = firebase.firestore();
+    </script>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
